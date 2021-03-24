@@ -1,9 +1,14 @@
+using CriadoresCaes.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+
+//adicionar esta referência 
+using Microsoft.EntityFrameworkCore;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +29,20 @@ namespace CriadoresCaes
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            /*###############################################################*/
+            /*############* Configurar o acesso à Base de Dados *############*/
+            /*###############################################################*/
+            services.AddDbContext<CriadoresCaesDB>(
+
+                options => options.UseSqlServer(Configuration.GetConnectionString("myConnectionString"))
+            );
+
+                 
+            /*###############################################################*/
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
