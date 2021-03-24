@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -25,7 +26,17 @@ namespace CriadoresCaes.Models
         /// <summary>
         /// Local da fotografia
         /// </summary>
-        public string LocalFoto { get; set; }
+        public string Local { get; set; }
+
+        /***************************************************/
+        //fOREIGNkEY BLA BLA BLA É SEMPRE NO LADO DO MUITOS!!!!!!
+
+        [ForeignKey(nameof(Cao))]
+        public int CaoFK { get; set; }
+        public Caes Cao { get; set; }
 
     }
+
+   
+
 }
