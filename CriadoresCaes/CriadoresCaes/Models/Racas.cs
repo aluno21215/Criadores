@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,16 +16,18 @@ namespace CriadoresCaes.Models
             ListaDeCaes = new HashSet<Caes>();
 
         }
-           
 
-    /// <summary>
-    /// Identificar cada uma das Raças
-    /// </summary>
-    public int Id { get; set; }
+
+        /// <summary>
+        /// Identificar cada uma das Raças
+        /// </summary>
+        ///   [Key]
+        public int Id { get; set; }
 
         /// <summary>
         /// Identificar o nome da Raça
         /// </summary>
+      
         public string Designacao { get; set; } //prop + tab
 
         /***********************************************************************/
