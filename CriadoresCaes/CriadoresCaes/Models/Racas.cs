@@ -14,14 +14,13 @@ namespace CriadoresCaes.Models
         public Racas()
         {
             ListaDeCaes = new HashSet<Caes>();
-
         }
 
 
         /// <summary>
         /// Identificar cada uma das Raças
         /// </summary>
-        ///   [Key]
+           [Key]
         public int Id { get; set; }
 
         /// <summary>
