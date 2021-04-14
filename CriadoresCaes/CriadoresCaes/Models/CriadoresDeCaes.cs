@@ -28,7 +28,7 @@ namespace CriadoresCaes.Models
         /// </summary>
         //[Key, Column(Order = 1)]
         [ForeignKey(nameof(Cao))]
-        public int CaesFK { get; set; }
+        public int CaoFK { get; set; }
         public Caes Cao { get; set; }
 
         //************************************************************
